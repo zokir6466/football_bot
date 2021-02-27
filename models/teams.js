@@ -4,7 +4,6 @@ async function teams(ctx, Player , Team) {
         let str = ''
         let players = []
         for (let id of i.players) {
-
             let player = await Player.findOne({
                 "_id": id
             })
@@ -13,11 +12,11 @@ async function teams(ctx, Player , Team) {
         for (let x of players) {
             str += (x + '\n')
         }
-
         ctx.reply(`
             <b>${i.name}</b>: 
 ${str}
         `, {parse_mode: "HTML"})
+
     }
 }
 
